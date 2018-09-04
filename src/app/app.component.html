@@ -1,0 +1,202 @@
+
+  <header>
+            <nav class="navbar navbar-toggleable-sm " id="grad1">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> <a class="navbar-brand" style="color:ivory" href="#">HIT-C</a>
+
+
+              <!---------------------------------- BARRE DE NAVIGATION ------------------------------------------->
+              <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item active"><a class="nav-link active" [routerLink]="['/Accueil']">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" [routerLink]="['/About']">A Propos</a></li>
+                        <li class="nav-item"><a class="nav-link" [routerLink]="['/Formation']">Formations</a></li>
+                        <li class="nav-item"><a class="nav-link" [routerLink]="['/Contact']">Contact</a></li>
+                    </ul>
+                </div>
+
+
+              <div class="row justify-content-end">
+                    <ul class="nav navbar-nav">
+
+                      <!---------------------------------------BOUTON CONNEXION INSCRIPTION--------------------------------------------->
+
+                        <div style="display: flex" >
+                          <!-- PANIER -->
+                          <li class="nav-item" (click)="afficherPanier()" style="display: flex" >
+                            <a class="nav-link" >
+                            <span class="fa fa-shopping-cart">
+
+                                </span>
+                              <i  aria-hidden="true">
+                                Panier
+                              </i>
+
+                            </a>
+                          </li>
+                          <!--&lt;!&ndash; INSCRIPTION &ndash;&gt;
+                          <li class="nav-item" *ngIf="!connecte">
+                            <a class="nav-link" href="#" data-toggle="modal" data-target="#inscription" data-whatever="@Inscription">
+                              <span>
+                                <i class="fa fa-user-plus" aria-hidden="true">
+                                  Inscritption
+                                </i>
+                              </span>
+                            </a>
+                          </li>
+
+
+                          <div *ngIf="connecte;else connexion" >
+                            <li class="nav-item" (click)="seDeconnecter()">
+                              <a class="nav-link" href="#" data-toggle="modal"data-whatever="@connexion">
+                                <span>
+                                  <i class="fa fa-sign-in" aria-hidden="true">
+                                    Deconnexion
+                                  </i>
+                                </span>
+                              </a>
+                            </li>
+                          </div>
+
+                          <ng-template #connexion>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#" data-toggle="modal" data-target=#connexion" data-whatever="@connexion">
+                                <span>
+                                  <i class="fa fa-sign-in" aria-hidden="true">
+                                    Connexion
+                                  </i>
+                                </span>
+                              </a>
+                            </li>
+                          </ng-template>-->
+
+
+
+
+
+                          <li class="nav-item" *ngIf="!connecte" style="display: flex" >
+                            <a class="nav-link" href="#" data-toggle="modal" data-target="#inscription" data-whatever="@Inscription">
+                              <span class="glyphicon glyphicon-user"></span> Inscritption
+                            </a>
+                          </li>
+
+                          <div *ngIf="connecte;else connexion" >
+                            <li class="nav-item" (click)="seDeconnecter()">
+                              <a class="nav-link" href="#" data-whatever="@connexion">
+                                <span class="fa fa-sign-out"></span>
+                                  Deconnexion
+                              </a>
+                            </li>
+                          </div>
+
+                          <ng-template #connexion>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#" data-toggle="modal" data-target="#connexion" data-whatever="@connexion">
+                                <span class="fa fa-sign-in"></span>
+                                Connexion</a></li>
+                          </ng-template>
+
+                        </div>
+                    </ul>
+              </div>
+
+            </nav>
+
+    <!---------------------------------- MODAL INSCRIPTION ------------------------------------------->
+    <div>
+
+      <div class="modal fade" id="inscription" tabindex="-1" role="dialog" aria-labelledby="inscriptionLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="inscriptionLabel">Inscription</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+              <div class="modal-body">
+              <form (ngSubmit)="sInscrire()">
+                <div class="form-goup">
+                  <label for="nom">NOM</label>
+                  <input type="text" id="nom"[(ngModel)]="clientAInscrire.nom"  name="nom"  class="form-control">
+                </div>
+                <div class="form-goup">
+                  <label for="prenom">RRENOM</label>
+                  <input type="text" id="prenom" name="prenom" [(ngModel)]="clientAInscrire.prenom" class="form-control">
+                </div>
+                <div class="form-goup">
+                  <label for="rue">RUE</label>
+                  <input type="text" id="rue" name="rue" [(ngModel)]="clientAInscrire.adresse.rue" class="form-control">
+                </div>
+                <div class="form-goup">
+                  <label for="ville">VILLE</label>
+                  <input type="text" id="ville" name="ville" [(ngModel)]="clientAInscrire.adresse.ville" class="form-control">
+                </div>
+                <div class="form-goup">
+                  <label for="cp">CODE POSTAL</label>
+                  <input type="number" id="cp" name="codePostal" [(ngModel)]="clientAInscrire.adresse.codePostal" class="form-control">
+                </div>
+                <div class="form-goup">
+                  <label for="mail">E-MAIL</label>
+                  <input type="email" id="mail" name="email" [(ngModel)]="clientAInscrire.email" class="form-control">
+                </div>
+                <div class="form-goup">
+                  <label for="dn">DATE NAISSANCE</label>
+                  <input type="date" id="dn" name="dateNaissance" [(ngModel)]="clientAInscrire.dateNaissance" class="form-control">
+                </div>
+                <div class="form-goup">
+                  <label for="login">LOGIN</label>
+                  <input type="text" id="login" name="userName"[(ngModel)]="clientAInscrire.identifiantsConnexion.userName" class="form-control">
+                </div>
+                <div class="form-goup">
+                  <label for="mdp">PASSWORD</label>
+                  <input type="text" id="mdp" name="mdp" [(ngModel)]="clientAInscrire.identifiantsConnexion.password" class="form-control">
+                </div>
+                <br>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary" data-dismiss="modal" >S'INSCRIRE</button>
+                </div>
+             </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!---------------------------------- MODAL CONNEXION------------------------------->
+    <div class="modal fade" id="connexion" tabindex="-1" role="dialog" aria-labelledby="connexionLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="connexionLabel">Connexion</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                        </div>
+                        <div class="modal-body">
+                          <div *ngIf="error" class="alert alert-danger "> {{error._body}}</div>
+                            <form>
+                               <div class="form-group">
+                                    <label for="log" class="form-control-label">Identifiants:</label>
+                                 <input type="text" id="log" name="username" [(ngModel)]="username" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="motDePasse" class="form-control-label">Mot de Passe:</label>
+                                  <input type="text" id="motDePasse" name="motDePasse" [(ngModel)]="motDePasse" class="form-control">
+                                </div>
+                              <br>
+                              <br>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                <button type="submit" class="btn btn-primary" (click)="seConnecter()" data-dismiss="modal" >LOG IN</button>
+
+                              </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+  </header>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+        <div class="parallax"></div>

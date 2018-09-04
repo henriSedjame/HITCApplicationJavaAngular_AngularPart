@@ -1,0 +1,40 @@
+<div class="parallax tof">
+         <div class="container-fluid justify-content-center showcase">
+
+            <div class="row justify-content-center">
+                <h1 class="display-1 col-lg-12 " col-lg-12>HIT-C</h1>
+                <p class="lead display-1 col-lg-12">Come to us If you have your Head In The Clouds</p>
+            </div>
+
+           <br>
+
+            <!--<div class="row justify-content-center align-item-center">
+                <div class="row col-md-12 justify-content-between">
+                    <button class="btn btn-default coins m-2" type="submit">Breakdance with the best</button>
+                    <button class="btn btn-default coins m-2" type="submit">Button</button>
+                    <button class="btn btn-default coins m-2" type="submit">Button</button>
+                    <button class="btn btn-default coins m-2" type="submit">Button</button>
+                </div>
+                <div class="row col-md-8 justify-content-between">
+                    <button class="btn btn-default coins m-2" type="submit">Button</button>
+                    <button class="btn btn-default coins m-2" type="submit">Button</button>
+                    <button class="btn btn-default coins m-2" type="submit">Button</button>
+                </div>
+                <div class="row col-md-10 justify-content-between">
+                    <button class="btn btn-default coins m-2" type="submit">Button</button>
+                    <button class="btn btn-default coins m-2" type="submit">Button</button>
+                    <button class="btn btn-default coins m-2" type="submit">Button</button>
+                    <button class="btn btn-default coins m-2" type="submit">Button</button>
+                </div>
+            </div>-->
+
+           <div class="row justify-content-center align-item-center">
+             <div class="row col-md-12 justify-content-between">
+               <button class="btn btn-default coins m-2" *ngFor="let prod of produits" (click)="produitParDesignation(prod.designation)">{{prod.designation}}</button>
+
+             </div>
+           </div>
+
+        </div>
+  </div>
+   <div class="parallax "></div>

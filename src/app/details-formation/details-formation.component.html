@@ -1,0 +1,51 @@
+<div class="container">
+
+
+  <div class="row justify-content-start ">
+
+    <div class="col imgProd">
+      <img src="{{produitDesigne.urlImage}}" >
+    </div>
+
+    <div class="col details">
+      <h3>{{produitDesigne.designation}}</h3>
+
+      <div>
+        <h4>Durée de la formation: </h4>
+        <h5>{{produitDesigne.detailsFormation.duree}}</h5>
+      </div>
+
+      <div>
+        <h4>Organisme de Formation : </h4>
+        <h5>{{produitDesigne.detailsFormation.organismeFormation.nom}}</h5>
+      </div>
+
+      <div class="prix">
+        <h4>Prix Unitaire : </h4>
+        <h5>{{produitDesigne.prixUnitaire}}</h5>
+      </div>
+
+      <div [class]="produitDesigne.disponibilite? 'vert' : 'rouge'"></div>
+
+    </div>
+  </div>
+
+  <div class="row justify-content-start  descriptif">
+    <h3>descriptif</h3>
+    <p>{{produitDesigne.detailsFormation.descriptif}}</p>
+  </div>
+
+  <div class="boutons">
+    <div class="retour">
+      <button class="btn btn-primary">RETOUR</button>
+    </div>
+    <div class="panier">
+      <button><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span> CART</button>
+      <button><span><i class="fa fa-heart" aria-hidden="true"></i></span> ajouter au panier</button>
+    </div>
+  </div>
+
+</div>
+
+
+

@@ -1,0 +1,48 @@
+<div class="container m-t-md">
+
+
+
+
+  <div class="row" style="margin-top: 50px">
+    <!-- First column -->
+    <div class="col-xs-3 col-md-2"></div>
+    <!-- Second column -->
+    <div class="col-xs-6 col-md-4" *ngFor="let cat of formationCategories1">
+      <article class="card animated fadeInLeft rounded-circle" style="max-height: 20rem;">
+        <img class="card-img-top img-responsive  " src="{{cat.image}}" alt="{{cat.alt}}"/>
+      </article>
+      <div class="card-block animated fadeInLeft ">
+        <h4 class="card-title text-center">FORMATIONS {{cat.title}}S</h4>
+        <p class="card-text text-center">
+          {{cat.description}}
+        </p>
+        <button  class="btn btn-outline-primary" (click)="produitParCategorie(cat.title)" >{{cat.msgBouton}}</button>
+      </div>
+    </div>
+
+    <!-- Fourth column -->
+    <div class="col-xs-3 col-md-2"></div>
+  </div>
+
+  <div class="row">
+    <!-- First column -->
+    <div class="col-xs-3 col-md-2"></div>
+    <!-- Second column -->
+    <div class="col-xs-6 col-md-4" *ngFor="let cat of formationCategories2">
+      <article class="card animated fadeInLeft rounded-circle" style="max-height: 20rem;">
+        <img class="card-img-top img-responsive  " src="{{cat.image}}" alt="{{cat.alt}}"/>
+      </article>
+      <div class="card-block animated fadeInLeft ">
+        <h4 class="card-title text-center">FORMATIONS {{cat.title}}S</h4>
+        <p class="card-text text-center">
+          {{cat.description}}
+        </p>
+        <button  class="btn btn-outline-primary" (click)="produitParCategorie(cat.title)">{{cat.msgBouton}}</button>
+      </div>
+    </div>
+
+    <!-- Fourth column -->
+    <div class="col-xs-3 col-md-2"></div>
+  </div>
+</div>
+

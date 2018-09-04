@@ -1,0 +1,24 @@
+
+
+  <table>
+    <thead>
+        <tr>
+          <th>DESIGNATION</th>
+          <th>CATEGORIE</th>
+          <th>DISPONIBILITE</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let prod of produitsCat">
+          <td>{{prod.designation}}</td>
+          <td>{{prod.categorie}}</td>
+          <td>{{prod.disponibilite}}</td>
+          <td><button class="btn btn-primary" (click)="produitParDesignation(prod.designation)">VOIR LE DETAIL</button></td>
+        </tr>
+
+     </tbody>
+
+  </table>
+
+

@@ -1,0 +1,13 @@
+.vert{
+  border-radius: 100%;
+  background-color: green;
+  width:25px;
+  height:25px;
+ }
+
+.rouge{
+  border-radius: 100%;
+  background-color: red;
+  width:25px;
+  height:25px;
+}
